@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://obtill199.github.io/JustCutIt/sitemap.xml

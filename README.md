@@ -1,13 +1,27 @@
-# Just Cut It Lawn Care — website concept
+# Just Cut It Lawn Care
 
-A responsive, static homepage sample for Just Cut It Lawn Care LLC in Wichita, Kansas. Open `index.html` in a browser or serve the folder with any static web server. It can be placed directly into a GitHub Pages repository.
+Website for Just Cut It Lawn Care LLC: lawn mowing, yard cleanups, gutter cleaning and junk removal in Wichita, KS.
 
-## Before launch
+Live at https://obtill199.github.io/JustCutIt/ (GitHub Pages from `main` / root).
 
-- Confirm all copy, services, service area, phone, and email with the business.
-- Replace illustrative generated images in `assets/` with approved photos of the business's actual work.
-- Replace the quote form's `mailto:` flow with a proper form service if the business wants on-site submission; the current form opens the visitor's email app.
-- Remove the preview notice and the `<meta name="robots" content="noindex, nofollow">` tag only after the owner approves the site for public indexing.
-- Add the final canonical URL and social sharing image after the domain is chosen.
+A static site with no build step: `index.html`, `styles.css`, `script.js`, plus `assets/` (icons and social share image). The quote form doesn't send data anywhere. It opens a pre-filled text message to Jimmy (with copy and email fallbacks).
 
-Public business details were checked against the business's Facebook page and [BBB profile](https://www.bbb.org/us/ks/wichita/profile/lawn-maintenance/just-cut-it-lawn-care-llc-0714-1000085564). The customer quote is attributed to [GreenPal](https://www.yourgreenpal.com/local/lawn-care-wichita-ks).
+## Run locally
+
+```bash
+python3 -m http.server 8413
+```
+
+Then open http://localhost:8413.
+
+## Updating
+
+- **Phone/email:** in several places in `index.html` (including the JSON-LD in `<head>`), plus `PHONE` / `EMAIL` at the top of `script.js`.
+- **Services, prices, FAQ:** `index.html`. The FAQ questions and answers also appear in the `FAQPage` JSON-LD in `<head>`, so keep both in sync. The "$40–$60 a cut" range and some FAQ answers come from his GreenPal profile. Confirm them with Jimmy.
+- **Hero animation:** the six `.stripe` elements and `.mower` SVG in the hero, animated in `script.js`.
+
+## SEO
+
+- Title, meta description, canonical URL, Open Graph/Twitter tags, `LocalBusiness` + `WebSite` + `FAQPage` structured data, `sitemap.xml`, `robots.txt`.
+- **If the site moves to its own domain** (e.g. justcutitlawncare.com), find/replace `https://obtill199.github.io/JustCutIt/` in `index.html`, `sitemap.xml` and `robots.txt`. `robots.txt` only takes effect at a domain root.
+- Submit `sitemap.xml` in Google Search Console, and link the site from Jimmy's Google Business Profile, Facebook, BBB and GreenPal pages.
